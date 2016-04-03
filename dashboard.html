@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style/css/leaderboard.css">
+
+</head>
+
+<body>
+
+	<template id="competitors-template">
+		<div class="CompetitorList">
+			<athlete v-for="athlete in list"
+					:data="athlete"
+					class="Athlete animated"
+					v-show="showAthletes"
+					transition="reload"
+					stagger="100"></athlete>
+		</div>
+	</template>
+
+	<template id="athlete-template">
+		<div>
+			<div class="Athlete__rank">
+				<h5> {{ data.rank }} </h5>
+			</div>
+			<h2 class="Athlete__name">{{ athleteName }}</h2>
+			<h4 class="Athlete__reps"> {{ numReps }} </h4>
+		</div>
+	</template>
+
+	<nav>
+		<img src="images/logo.svg">
+	</nav>
+	<div id="leaderboard-app">
+		<div id="background-extension"></div>
+		<div class="Header">
+			<h1 class="Header__title"> {{ leaderboardTitle }} </h1>
+			<div class="Header__summary" v-show="showAthletes">
+				<div class="Header__stat">
+					<h3> {{ numAthletes }} </h3>
+					<h4>Athletes</h4>
+				</div>
+				<div class="Header__stat">
+					<h3> {{ percentPrescribed }} </h3>
+					<h4>As Prescribed</h4>
+				</div>
+				<div class="Header__stat">
+					<h3> {{ medianReps }} </h3>
+					<h4>Avg Reps</h4>
+				</div>
+				<div class="Header__stat">
+					<h3> {{ maxReps }} </h3>
+					<h4>Max Reps</h4>
+				</div>
+			</div>
+		</div>
+		<hr class="pad2">
+		<div class="Header">
+			<h1 class="Header__title">Top {{ numTopAthletesSticky }}</h1>
+			<img class="Header__image" src="images/trophy.svg">
+		</div>
+		<competitors :list="topX"
+					:show-athletes="showAthletes"
+					id="top-x">
+		</competitors>
+		<hr class="pad2">
+		<div class="Header">
+			<h1 class="Header__title">In the hunt</h1>
+			<img class="Header__image" src="images/barbell.svg">
+		</div>
+		<competitors :list="leaderboardPage"
+					:show-athletes="showAthletes"
+					id="remaining-leaderboard">
+		</competitors>
+	</div>
+	<hr class="pad5">
+
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.js"></script>
+	<script type="text/javascript" src="js/dashboard.js"></script>
+
+</body>
+
+</html>

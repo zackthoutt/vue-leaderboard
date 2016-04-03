@@ -1,0 +1,26 @@
+hr {
+	outline: 0;
+	border: 0;
+	height: 0;
+	margin: 0;
+	&.pad2 {
+		padding: 1% 0;
+	}
+	&.pad5 {
+		padding: 2.5% 0;
+	}
+	&.pad10 {
+		padding: 5% 0;
+	}
+}
+
+nav {
+	width: 100%;
+	background-color: $color-1;
+	img {
+		display: block;
+		width: 150px;
+		margin: 0 auto;
+		padding: 33px 0;
+	}
+}

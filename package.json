@@ -1,0 +1,11 @@
+{
+  "name": "Leaderboard",
+  "version": "1.0.0",
+  "author": "Zack Thoutt",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}
