@@ -44,7 +44,7 @@ new Vue({
 		numTopAthletesSticky: 3,
 		numPagesOfLeaderboard: 0,
 		numAthletesPerPage: 10,
-		leaderboardPageDelay: 5000,
+		leaderboardPageDelay: 10000,
 		ajaxErrorCount: 0,
 		reps: [],
 		percentPrescribed: 0,
